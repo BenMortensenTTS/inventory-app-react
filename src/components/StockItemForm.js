@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 function ShowStockItems(props) {
 
 	const [id, setId] = useState(0);
-	const [amountInStock, setAmountInStock] = useState(0);
-	const [alertAt, setAlertAt] = useState(0);
+	const [amountInStock, setAmountInStock] = useState("");
+	const [alertAt, setAlertAt] = useState("");
 	const [itemName, setItemName] = useState("");
 	const [emailAddress, setEmailAddress] = useState("");
 	const [room, setRoom] = useState("");
 	
 	const resetState = () => {
-		setAmountInStock(0);
-		setAlertAt(0);
+		setAmountInStock("");
+		setAlertAt("");
 		setItemName("");
 		setEmailAddress("");
 		setRoom("");
