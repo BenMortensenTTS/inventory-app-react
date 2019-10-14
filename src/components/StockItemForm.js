@@ -28,8 +28,10 @@ function ShowStockItems(props) {
 			setItemName(props.location.state.itemName);
 			setEmailAddress(props.location.state.emailAddress);
 			setRoom(props.location.state.room);			
+		} else {
+			resetState();
 		}
-	}, [id])
+	}, [props.action])
 
 	const onStockInput = (input) => {
 		setAmountInStock(input.target.value);
@@ -52,7 +54,7 @@ function ShowStockItems(props) {
 	}
 
 	const handleUpdateClick = () => {
-		fetch('http://localhost:8080/stockitem/' + this.state.id, {
+		fetch('http://localhost:8080/stockitem/' + id, {
 	    	method: 'put',
 	    	headers: {
 	        	"Content-Type": "application/json"
@@ -100,19 +102,19 @@ function ShowStockItems(props) {
 	return (
 		<div id="form">
 			<div className="form-header">Name of the Item:</div>
-				<input className="form-input" type="text" onChange={onNameInput} value={checkProps ? itemName : console.log()} required />
+				<input className="form-input" type="text" onChange={onNameInput} value={itemName} required />
 			
 			<div className="form-header"># Currently In Stock:</div>
-				<div><input className="form-input" type="number"  onChange={onStockInput} value={checkProps ? amountInStock : console.log()} required /></div>
+				<div><input className="form-input" type="number"  onChange={onStockInput} value={amountInStock} required /></div>
 			
 			<div className="form-header"># of Stock for Notification:</div>
-				<div><input className="form-input" type="number"  onChange={onAlertInput} value={checkProps ? alertAt : console.log()} required /></div>
+				<div><input className="form-input" type="number"  onChange={onAlertInput} value={alertAt} required /></div>
 			
 			<div className="form-header">Email Address:</div>
-				<div><input className="form-input" type="email" onChange={onEmailInput} value={checkProps ? emailAddress : console.log()} required /></div>
+				<div><input className="form-input" type="email" onChange={onEmailInput} value={emailAddress} required /></div>
 			
 			<div className="form-header">Select Room:</div>
-				<div><input className="form-input" onChange={handleRoom} list="rooms" name="room" autoComplete="off" value={checkProps? room : console.log()}/></div>
+				<div><input className="form-input" onChange={handleRoom} list="rooms" name="room" autoComplete="off" value={room}/></div>
 				 	<datalist id="rooms">
 					    <option value="Bathroom"></option>
 					    <option value="Bedroom"></option>

@@ -48,11 +48,11 @@ class App extends React.Component {
                 <ShowStockItem {...props} getDataFromAPI={this.getDataFromAPI}/>
               )}/>
               <Route path="/edit/stockitem/:id" render={(props)=> (
-                <StockItemForm {...props} getDataFromAPI={this.getDataFromAPI} />
+                <StockItemForm {...props} action="update" getDataFromAPI={this.getDataFromAPI} />
               )} />
-              <Route path="/add">
-                <StockItemForm getDataFromAPI={this.getDataFromAPI}/>
-              </Route>
+              <Route path="/add" render={(props) => (
+                <StockItemForm {...props} action="submit" getDataFromAPI={this.getDataFromAPI}/>
+                )}/>
               <Route exact path="/">
                 <ShowAllStockItems getDataFromAPI={this.getDataFromAPI} stock={this.state.inventoryData}/>
               </Route>
