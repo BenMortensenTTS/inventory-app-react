@@ -1,0 +1,19 @@
+.form-header {
+	line-height: 30px;
+}
+
+.form-input {
+	border-width: 1.2px;
+	box-shadow: 1px 1px 1px black;
+}
+
+.form-button {
+	margin:0 auto;
+	width: 90px;
+}
+
+#form {
+	padding-top: 50px;
+	margin: 0 auto;
+	width: 186px;
+}
