@@ -4,6 +4,8 @@ import ShowAllStockItems from './components/ShowAllStockItems';
 import ShowStockItem from './components/ShowStockItem';
 import StockItemForm from './components/StockItemForm';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import DenseAppBar from './components/AppBar'
+import Button from 'react-bootstrap/Button';
 
 function App() {
   const [inventoryData, setInventoryData] = useState([]);
@@ -22,17 +24,12 @@ function App() {
 
   return (
     <div>
+      <DenseAppBar />
       <Router>
-        <div>
+        <div className="container">
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Show Inventory</Link>
-              </li>
-              <li>
-                <Link to="/add">Add Inventory Item</Link>
-              </li>
-            </ul>
+                <Link to="/"><Button variant="secondary">Show Inventory</Button></Link><br/>
+                <Link to="/add"><Button variant="secondary">Add Inventory Item</Button></Link>
           </nav>
 
           {/* A <Switch> looks through its children <Route>s and

@@ -1,10 +1,11 @@
 .form-header {
 	line-height: 30px;
+	font-weight: bold;
 }
 
 .form-input {
 	border-width: 1.2px;
-	box-shadow: 1px 1px 1px black;
+	box-shadow: .2px 1.5px 4px black;
 }
 
 .form-button {

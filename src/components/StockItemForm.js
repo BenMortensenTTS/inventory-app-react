@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './StockItemForm.css'
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function ShowStockItems(props) {
 
-	const [id, setId] = useState(0);
+	const [id, setId] = useState("");
 	const [amountInStock, setAmountInStock] = useState("");
 	const [alertAt, setAlertAt] = useState("");
 	const [itemName, setItemName] = useState("");
@@ -17,12 +18,13 @@ function ShowStockItems(props) {
 		setItemName("");
 		setEmailAddress("");
 		setRoom("");
+		setId("");
 	}
 
 	useEffect(()=> {
-		let theId = props.match ? props.match.params.id : 0;
-		setId(theId)
-		if(theId) {
+		let paramId = props.match ? props.match.params.id : 0;
+		setId(paramId)
+		if(paramId) {
 			setAmountInStock(props.location.state.amountInStock);
 			setAlertAt(props.location.state.alertAt);
 			setItemName(props.location.state.itemName);
@@ -94,9 +96,9 @@ function ShowStockItems(props) {
 		let updateOrSubmit;
 		let checkProps = props.match ? props.match.params.id : 0;
 		if(checkProps) {
-			updateOrSubmit = <div className="form-button"><button  onClick={handleUpdateClick}>Update</button></div>
+			updateOrSubmit = <div className="form-button"><Button variant="primary" onClick={handleUpdateClick}>Update</Button></div>
 		} else {
-			updateOrSubmit = <div className="form-button"><button onClick={handleCreateClick}>Submit</button></div>
+			updateOrSubmit = <div className="form-button"><Button variant="primary" onClick={handleCreateClick}>Submit</Button></div>
 		}
 
 	return (
@@ -107,7 +109,7 @@ function ShowStockItems(props) {
 			<div className="form-header"># Currently In Stock:</div>
 				<div><input className="form-input" type="number"  onChange={onStockInput} value={amountInStock} required /></div>
 			
-			<div className="form-header"># of Stock for Notification:</div>
+			<div className="form-header"># of Stock to Notify:</div>
 				<div><input className="form-input" type="number"  onChange={onAlertInput} value={alertAt} required /></div>
 			
 			<div className="form-header">Email Address:</div>
@@ -128,8 +130,6 @@ function ShowStockItems(props) {
 			<Link to="/">{updateOrSubmit}</Link>
 		</div>
 	);
-	
-	
 }
 
 export default ShowStockItems;
