@@ -3,7 +3,7 @@ import './StockItemForm.css'
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
-function ShowStockItems(props) {
+function StockItemForm(props) {
 
 	const [id, setId] = useState("");
 	const [amountInStock, setAmountInStock] = useState("");
@@ -33,7 +33,7 @@ function ShowStockItems(props) {
 		} else {
 			resetState();
 		}
-	}, [props.action])
+	}, [props.match])
 
 	const onStockInput = (input) => {
 		setAmountInStock(input.target.value);
@@ -132,4 +132,4 @@ function ShowStockItems(props) {
 	);
 }
 
-export default ShowStockItems;
+export default StockItemForm;

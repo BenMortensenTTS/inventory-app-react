@@ -26,11 +26,12 @@ function App() {
     <div>
       <DenseAppBar />
       <Router>
+        <nav>
+          <Link to="/"><Button className="nav-button" variant="secondary">Show Inventory</Button></Link><br/>
+          <Link to="/add"><Button className="nav-button" variant="secondary">Add Inventory Item</Button></Link>
+        </nav>
         <div className="container">
-          <nav>
-                <Link to="/"><Button variant="secondary">Show Inventory</Button></Link><br/>
-                <Link to="/add"><Button variant="secondary">Add Inventory Item</Button></Link>
-          </nav>
+          
 
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
@@ -39,10 +40,10 @@ function App() {
               <ShowStockItem {...props} getDataFromAPI={getDataFromAPI}/>
             )}/>
             <Route path="/edit/stockitem/:id" render={(props)=> (
-              <StockItemForm {...props} action="update" getDataFromAPI={getDataFromAPI} />
+              <StockItemForm {...props} getDataFromAPI={getDataFromAPI} />
             )} />
             <Route path="/add" render={(props) => (
-              <StockItemForm {...props} action="submit" getDataFromAPI={getDataFromAPI}/>
+              <StockItemForm {...props} getDataFromAPI={getDataFromAPI}/>
               )}/>
             <Route exact path="/">
               <ShowAllStockItems stock={inventoryData}/>

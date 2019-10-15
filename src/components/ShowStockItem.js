@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import './ShowStockItem.css';
 
-function ShowStockItems(props) {
+function ShowStockItem(props) {
 
 	const [stockInfo, setStockInfo] = useState({});
 
@@ -34,7 +36,7 @@ function ShowStockItems(props) {
 				<li>Email Address: {stockInfo.emailAddress}</li>
 				<li>Room: {stockInfo.room}</li>
 			</ul>
-			<button onClick={()=>deleteStockItem(stockInfo.id)}>Delete</button>
+			<Button variant="danger" id="delete-button" onClick={()=>deleteStockItem(stockInfo.id)}>Delete</Button>
 			<Link to={{
 				pathname:`/edit/stockitem/${stockInfo.id}`,
 				state: {
@@ -45,10 +47,10 @@ function ShowStockItems(props) {
 					room: stockInfo.room
 				}
 
-			}}><button>Edit</button></Link>
+			}}><Button variant="success">Edit</Button></Link>
 
 		</div>
 	);
 }
 
-export default ShowStockItems;
+export default ShowStockItem;
