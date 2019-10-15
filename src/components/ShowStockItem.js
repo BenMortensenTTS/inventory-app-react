@@ -9,7 +9,7 @@ function ShowStockItem(props) {
 
 	useEffect(()=> {
 		const id = props.match.params.id;
-        fetch("http://localhost:8080/stockitem/" + id)
+        fetch("https://inventoryapp.cfapps.io/stockitem/" + id)
             .then((res)=>res.json())
             .then((response)=>{
                 setStockInfo(response);
@@ -18,7 +18,7 @@ function ShowStockItem(props) {
 	}, [props.match.params.id])
 
 	const deleteStockItem = (id) => {
-		 fetch("http://localhost:8080/stockitem/" + id, {
+		 fetch("https://inventoryapp.cfapps.io/stockitem/" + id, {
             method: 'delete'
         }).then(()=>{
             props.getDataFromAPI();

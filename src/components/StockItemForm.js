@@ -56,7 +56,7 @@ function StockItemForm(props) {
 	}
 
 	const handleUpdateClick = () => {
-		fetch('http://localhost:8080/stockitem/' + id, {
+		fetch('https://inventoryapp.cfapps.io/stockitem/' + id, {
 	    	method: 'put',
 	    	headers: {
 	        	"Content-Type": "application/json"
@@ -75,7 +75,7 @@ function StockItemForm(props) {
 	}
 
 	const handleCreateClick = () => {
-		fetch('http://localhost:8080/stockitem', {
+		fetch('https://inventoryapp.cfapps.io/stockitem', {
 	    	method: 'post',
 	    	headers: {
 	        	"Content-Type": "application/json"
