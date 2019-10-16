@@ -1,4 +1,10 @@
 .nav-button {
 	opacity: .7;
-	margin: 10px 20px 20px 10px;
+	margin: 10px 20px 0px 10px;
 }
+
+body {
+	background-image: url(https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/uploads/2019/04/GetStartedTodayWithForm_CallOut-1.png);
+	background-size: 'cover';
+    overflow: 'hidden';
+ }

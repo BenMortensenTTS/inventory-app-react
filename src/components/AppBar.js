@@ -18,8 +18,8 @@ export default function DenseAppBar() {
   const classes = useStyles();
 
   return (
-    <div id="inventory-title" className={classes.root}>
-      <AppBar position="static">
+    <div className={classes.root}>
+      <AppBar position="static" id="inventory-title">
         <Toolbar variant="dense">
           <Typography variant="h6" color="inherit">
             <div>Inventory</div>

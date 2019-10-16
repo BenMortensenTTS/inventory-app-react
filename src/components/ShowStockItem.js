@@ -27,13 +27,12 @@ function ShowStockItem(props) {
 	}
 
 	return (
-		<div>
+		<div className="container">
 			<ul>
 				<li>ID: {stockInfo.id}</li>
 				<li>Item Name: {stockInfo.itemName}</li>
 				<li># In Stock: {stockInfo.amountInStock}</li>
 				<li># for Notification: {stockInfo.alertAt}</li>
-				<li>Email Address: {stockInfo.emailAddress}</li>
 				<li>Room: {stockInfo.room}</li>
 			</ul>
 			<Button variant="danger" id="delete-button" onClick={()=>deleteStockItem(stockInfo.id)}>Delete</Button>
@@ -43,11 +42,10 @@ function ShowStockItem(props) {
 					amountInStock: stockInfo.amountInStock,
 					alertAt: stockInfo.alertAt,
 					itemName: stockInfo.itemName,
-					emailAddress: stockInfo.emailAddress,
 					room: stockInfo.room
 				}
 
-			}}><Button variant="success">Edit</Button></Link>
+			}}><Button variant="success" className="ui">Edit</Button></Link>
 
 		</div>
 	);

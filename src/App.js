@@ -27,8 +27,8 @@ function App() {
       <DenseAppBar />
       <Router>
         <nav>
-          <Link to="/"><Button className="nav-button" variant="secondary">Show Inventory</Button></Link><br/>
-          <Link to="/add"><Button className="nav-button" variant="secondary">Add Inventory Item</Button></Link>
+          <Link to="/"><Button className="nav-button" variant="primary">Show Inventory</Button></Link><br/>
+          <Link to="/add"><Button className="nav-button" variant="primary">Add Inventory Item</Button></Link>
         </nav>
         <div className="container">
           
@@ -53,7 +53,8 @@ function App() {
       </Router>
     </div>
   );
-  
 }
+
+
 
 export default App;
