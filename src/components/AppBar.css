@@ -1,8 +1,14 @@
-.move-title {
-	display: inline-block;
-	text-align: center;
+#title {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  padding-left: 1.5%;
+  padding-top: .5%;
+  padding-bottom: 1%;
+  font-size: 125%;
 }
 
-.bar {
-	background-color: black;
+#nav-div {
+  background-color: black;
+  box-shadow: 0px 0px 8px 0px
 }
