@@ -32,6 +32,7 @@ function ShowStockItem(props) {
 				<li>ID: {stockInfo.id}</li>
 				<li>Item Name: {stockInfo.itemName}</li>
 				<li># In Stock: {stockInfo.amountInStock}</li>
+				<li># of Stock Ideally: {stockInfo.idealStock}</li>
 				<li>Alert Stock At: {stockInfo.alertAt}</li>
 				<li>Room: {stockInfo.room}</li>
 			</ul>
@@ -40,6 +41,7 @@ function ShowStockItem(props) {
 				pathname:`/edit/stockitem/${stockInfo.id}`,
 				state: {
 					amountInStock: stockInfo.amountInStock,
+					idealStock: stockInfo.idealStock,
 					alertAt: stockInfo.alertAt,
 					itemName: stockInfo.itemName,
 					room: stockInfo.room

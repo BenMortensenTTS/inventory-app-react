@@ -13,19 +13,24 @@
 	text-align: center;
 }
 
-#item-box {
-	display: inline-block;
-	margin-left: 20px;
-	margin-right: 20px;
-	float: left;
-	max-width: 200px;
-	min-width: 120px;
-	overflow: hidden;
+#container {
+	text-align: center;
 }
 
 #allstock-div {
-	text-align: center;
+	text-align: left;
 }
+
+.item-box {
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+	max-width: 200px;
+	min-width: 120px;
+	overflow: hidden;	
+}
+
+
 
 .items:hover {
 	background-color: black;
@@ -42,11 +47,12 @@
   border: .06em solid black;
   line-height: 115%;
   cursor: pointer;
-
+  text-align: center;
 }
 
 #minus {
 	background-color: #FF6868;
+	margin-left: 10%;
 }
 
 #plus {

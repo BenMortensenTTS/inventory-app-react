@@ -7,12 +7,14 @@ function StockItemForm(props) {
 
 	const [id, setId] = useState("");
 	const [amountInStock, setAmountInStock] = useState("");
+	const [idealStock, setIdealStock] = useState("");
 	const [alertAt, setAlertAt] = useState("");
 	const [itemName, setItemName] = useState("");
 	const [room, setRoom] = useState("");
 	
 	const resetState = () => {
 		setAmountInStock("");
+		setIdealStock("");
 		setAlertAt("");
 		setItemName("");
 		setRoom("");
@@ -24,6 +26,7 @@ function StockItemForm(props) {
 		setId(paramId)
 		if(paramId) {
 			setAmountInStock(props.location.state.amountInStock);
+			setIdealStock(props.location.state.idealStock);
 			setAlertAt(props.location.state.alertAt);
 			setItemName(props.location.state.itemName);
 			setRoom(props.location.state.room);			
@@ -34,6 +37,10 @@ function StockItemForm(props) {
 
 	const onStockInput = (input) => {
 		setAmountInStock(input.target.value);
+	}
+
+	const onidealStockInput = (input) => {
+		setAlertAt(input.target.value);
 	}
 
 	const onAlertInput = (input) => {
@@ -56,6 +63,7 @@ function StockItemForm(props) {
 	    	},
 	    	body: JSON.stringify({
 		        amountInStock: amountInStock,
+		        idealStock: idealStock,
 		        alertAt: alertAt,
 		        itemName: itemName,
 		        room: room 
@@ -74,6 +82,7 @@ function StockItemForm(props) {
 	    	},
 	    	body: JSON.stringify({
 		        amountInStock: amountInStock,
+		        idealStock: idealStock,
 		        alertAt: alertAt,
 		        itemName: itemName,
 		        room: room 
@@ -99,6 +108,9 @@ function StockItemForm(props) {
 			
 			<div className="form-header"># Currently In Stock:</div>
 				<div><input className="form-input" type="number"  onChange={onStockInput} value={amountInStock} required /></div>
+
+			<div className="form-header"># of Stock Ideally:</div>
+				<div><input className="form-input" type="number"  onChange={onidealStockInput} value={idealStock} required /></div>
 			
 			<div className="form-header">Alert Stock At:</div>
 				<div><input className="form-input" type="number"  onChange={onAlertInput} value={alertAt} required /></div>
@@ -106,12 +118,13 @@ function StockItemForm(props) {
 			<div className="form-header">Select Room:</div>
 				<div><input className="form-input" onChange={handleRoom} list="rooms" name="room" autoComplete="off" value={room}/></div>
 				 	<datalist id="rooms">
-					    <option value="Bathroom"></option>
+					    <option value="General"></option>
 					    <option value="Bedroom"></option>
 					    <option value="Kitchen"></option>
-					    <option value="Living Room"></option>
 					    <option value="Family Room"></option>
-					    <option value="Dining Room"></option>
+					    <option value="Garage"></option>
+					    <option value="Bathroom"></option>
+						<option value="Utility Room"></option>
 					    <option value="Other"></option>
 					</datalist>
 					<br/>
