@@ -40,21 +40,22 @@
   margin-right: 10%;
   margin-top: 4%;
   border: .06em solid black;
+  line-height: 115%;
 
 }
 
 #minus {
-	background-color: red;
+	background-color: #FF6868;
 }
 
 #plus {
-	background-color: #71C560;
+	background-color: #54FE8D;
 }
 
 #plus:hover {
-	background-color: #6EB460;
+	background-color: #01FE55;
 }
 
 #minus:hover {
-	background-color: #EB0E0E;
+	background-color: #FE0101;
 }

@@ -4,7 +4,7 @@ import ShowAllStockItems from './components/ShowAllStockItems';
 import ShowStockItem from './components/ShowStockItem';
 import StockItemForm from './components/StockItemForm';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import DenseAppBar from './components/AppBar'
+import AppBar from './components/AppBar'
 import Button from 'react-bootstrap/Button';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <DenseAppBar />
+      <AppBar />
       <Router>
         <nav>
           <Link to="/"><Button className="nav-button" variant="dark">Show Inventory</Button></Link>
@@ -46,12 +46,12 @@ function App() {
               <StockItemForm {...props} getDataFromAPI={getDataFromAPI}/>
               )}/>
             <Route exact path="/">
-              <ShowAllStockItems stock={inventoryData}/>
+              <ShowAllStockItems stock={inventoryData} getDataFromAPI={getDataFromAPI}/>
             </Route>
           </Switch>
         </div>
       </Router>
-     
+
     </div>
   );
 }
