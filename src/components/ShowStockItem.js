@@ -27,12 +27,12 @@ function ShowStockItem(props) {
 	}
 
 	return (
-		<div className="container">
+		<div className="container" id="single-item">
 			<ul>
 				<li>ID: {stockInfo.id}</li>
 				<li>Item Name: {stockInfo.itemName}</li>
 				<li># In Stock: {stockInfo.amountInStock}</li>
-				<li># for Notification: {stockInfo.alertAt}</li>
+				<li>Alert Stock At: {stockInfo.alertAt}</li>
 				<li>Room: {stockInfo.room}</li>
 			</ul>
 			<Button variant="danger" id="delete-button" onClick={()=>deleteStockItem(stockInfo.id)}>Delete</Button>

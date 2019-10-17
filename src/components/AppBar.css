@@ -1,3 +1,8 @@
-#inventory-title {
-	opacity: .85;
+.move-title {
+	display: inline-block;
+	text-align: center;
+}
+
+.bar {
+	background-color: black;
 }

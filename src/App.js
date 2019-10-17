@@ -27,8 +27,8 @@ function App() {
       <DenseAppBar />
       <Router>
         <nav>
-          <Link to="/"><Button className="nav-button" variant="primary">Show Inventory</Button></Link><br/>
-          <Link to="/add"><Button className="nav-button" variant="primary">Add Inventory Item</Button></Link>
+          <Link to="/"><Button className="nav-button" variant="dark">Show Inventory</Button></Link>
+          <Link to="/add"><Button className="nav-button" variant="dark">Add Inventory Item</Button></Link>
         </nav>
         <div className="container">
           

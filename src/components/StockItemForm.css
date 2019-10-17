@@ -6,14 +6,17 @@
 .form-input {
 	border-width: 1.2px;
 	box-shadow: .2px 1.5px 4px black;
+	padding-left: 6px;
 }
 
 .form-button {
 	margin:0 auto;
-	width: 60px;
+	width: 85px;
 }
 
 #form {
-	width: 186px;
+	margin:0 auto;
+	width: 220px;
+	margin-top: 30px;
 }
 
