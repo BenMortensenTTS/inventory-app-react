@@ -1,11 +1,9 @@
 #title {
-  display: inline-block;
-  text-align: center;
   color: white;
-  padding-left: 1.5%;
-  padding-top: .5%;
-  padding-bottom: 1%;
-  font-size: 125%;
+  padding-left: 18px;
+  padding-top: 7px;
+  padding-bottom: 12px;
+  font-size: 120%;
 }
 
 #nav-div {
