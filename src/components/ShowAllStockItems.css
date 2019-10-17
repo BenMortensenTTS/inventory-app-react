@@ -26,3 +26,35 @@
 #allstock-div {
 	text-align: center;
 }
+
+.items:hover {
+	background-color: black;
+	color: white;
+}
+
+.circle-state {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10%;
+  margin-top: 4%;
+  border: .06em solid black;
+
+}
+
+#minus {
+	background-color: red;
+}
+
+#plus {
+	background-color: #71C560;
+}
+
+#plus:hover {
+	background-color: #6EB460;
+}
+
+#minus:hover {
+	background-color: #EB0E0E;
+}
