@@ -66,3 +66,7 @@
 #minus:hover {
 	background-color: #FE0101;
 }
+
+.low {
+	background-color: red;
+}

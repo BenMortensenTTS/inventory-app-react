@@ -13,6 +13,7 @@ function ShowAllStockItems(props) {
 
 		console.log(props.stock);
 
+
 		if(props.match.url !== "/") {
 			setItemStockArr(props.stock.filter((item)=> {
 				return item.amountInStock <= item.alertAt;
@@ -20,7 +21,7 @@ function ShowAllStockItems(props) {
 				return (
 					<div className="item-box" key={item.id}>
 						<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
-							<div className="items">
+							<div className={"items " + ((item.amountInStock<=item.alertAt)?"low":"")}>
 								<div className="fields">{item.itemName}</div>
 								<div className="fields">Stock: {item.amountInStock}</div>
 								<div className="fields">Ideal: {item.idealStock}</div>
@@ -38,7 +39,7 @@ function ShowAllStockItems(props) {
 				return (
 					<div className="item-box" key={item.id}>
 						<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
-							<div className="items">
+							<div className={"items " + ((item.amountInStock<=item.alertAt)?"low":"")}>
 								<div className="fields">{item.itemName}</div>
 								<div className="fields">Stock: {item.amountInStock}</div>
 								<div className="fields">Ideal: {item.idealStock}</div>
