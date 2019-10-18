@@ -40,7 +40,7 @@ function StockItemForm(props) {
 	}
 
 	const onidealStockInput = (input) => {
-		setAlertAt(input.target.value);
+		setIdealStock(input.target.value);
 	}
 
 	const onAlertInput = (input) => {
