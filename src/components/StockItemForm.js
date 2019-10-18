@@ -129,6 +129,7 @@ function StockItemForm(props) {
 					</datalist>
 					<br/>
 			<Link to="/">{updateOrSubmit}</Link>
+			{console.log(props.match)}
 		</div>
 	);
 }

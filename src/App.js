@@ -29,6 +29,7 @@ function App() {
         <nav>
           <Link to="/"><Button className="nav-button" variant="dark">Show Inventory</Button></Link>
           <Link to="/add"><Button className="nav-button" variant="dark">Add Inventory Item</Button></Link>
+          <Link to="/shoppinglist"><Button className="nav-button" variant="dark">Shopping List</Button></Link>
         </nav>
         <div className="container">
           
@@ -40,14 +41,18 @@ function App() {
               <ShowStockItem {...props} getDataFromAPI={getDataFromAPI}/>
             )}/>
             <Route path="/edit/stockitem/:id" render={(props)=> (
-              <StockItemForm {...props} getDataFromAPI={getDataFromAPI} />
+              <StockItemForm {...props} getDataFromAPI={getDataFromAPI}/>
             )} />
             <Route path="/add" render={(props) => (
               <StockItemForm {...props} getDataFromAPI={getDataFromAPI}/>
               )}/>
-            <Route exact path="/">
-              <ShowAllStockItems stock={inventoryData} getDataFromAPI={getDataFromAPI}/>
-            </Route>
+            <Route exact path="/" render={(props) => (
+              <ShowAllStockItems {...props} stock={inventoryData} getDataFromAPI={getDataFromAPI}/>
+              )}/>
+              
+            <Route path="/shoppinglist" render={(props) => (
+              <ShowAllStockItems {...props} stock={inventoryData} getDataFromAPI={getDataFromAPI}/> 
+              )}/>
           </Switch>
         </div>
       </Router>

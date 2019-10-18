@@ -1,9 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './ShowAllStockItems.css';
 
 
 function ShowAllStockItems(props) {
+
+	const [itemStockArr, setItemStockArr] = useState([]);
+
+	useEffect(()=> {
+		if(props.match.url) {
+			setItemStockArr(props.stock.filter((item)=> {
+				return item.idealStock > item.amountInStock;
+			}).map((item)=> {
+				return (
+					<div className="item-box" key={item.id}>
+						<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
+							<div className="items">
+								<div className="fields">{item.itemName}</div>
+								<div className="fields">Stock: {item.amountInStock}</div>
+							</div>
+						</Link>
+						<div onClick={()=>subtractStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="minus">-</div>
+						<span onClick={()=>addStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="plus">+</span>
+					</div>
+				);
+			}))
+		}
+		
+	}, [props.match])
+
 
 	const subtractStockClick = (id, amountInStock, idealStock, alertAt, itemName, room) => {
 		if(amountInStock > 0) {
@@ -42,23 +67,6 @@ function ShowAllStockItems(props) {
 	     	props.getDataFromAPI();
 	    })
 	}
-
-	let itemStockArr = props.stock.map((item)=> {
-		return (
-			<div className="item-box" key={item.id}>
-				<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
-					<div className="items">
-						<div className="fields">{item.itemName}</div>
-						<div className="fields">Stock: {item.amountInStock}</div>
-
-					</div>
-				</Link>
-				<div onClick={()=>subtractStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="minus">-</div>
-				<span onClick={()=>addStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="plus">+</span>
-			</div>
-		);
-	})
-
 
 	return (
 		<div id="container">
