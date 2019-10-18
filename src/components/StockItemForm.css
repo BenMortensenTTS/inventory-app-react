@@ -1,11 +1,11 @@
 .form-header {
 	line-height: 30px;
-	font-weight: bold;
+	font-weight: 200;
 }
 
 .form-input {
 	border-width: 1.2px;
-	box-shadow: .2px 1.5px 4px black;
+	box-shadow: .2px 1.5px 2px black;
 	padding-left: 6px;
 }
 
