@@ -8,9 +8,14 @@ function ShowAllStockItems(props) {
 	const [itemStockArr, setItemStockArr] = useState([]);
 
 	useEffect(()=> {
-		if(props.match.url) {
+
+		setItemStockArr([]);
+
+		console.log(props.stock);
+
+		if(props.match.url !== "/") {
 			setItemStockArr(props.stock.filter((item)=> {
-				return item.idealStock > item.amountInStock;
+				return item.amountInStock <= item.alertAt;
 			}).map((item)=> {
 				return (
 					<div className="item-box" key={item.id}>
@@ -18,6 +23,25 @@ function ShowAllStockItems(props) {
 							<div className="items">
 								<div className="fields">{item.itemName}</div>
 								<div className="fields">Stock: {item.amountInStock}</div>
+								<div className="fields">Ideal: {item.idealStock}</div>
+							</div>
+						</Link>
+						<div onClick={()=>subtractStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="minus">-</div>
+						<span onClick={()=>addStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="plus">+</span>
+					</div>
+				);
+			}))
+		}
+
+		else if(props.match.url === "/") {
+			setItemStockArr(props.stock.map((item)=> {
+				return (
+					<div className="item-box" key={item.id}>
+						<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
+							<div className="items">
+								<div className="fields">{item.itemName}</div>
+								<div className="fields">Stock: {item.amountInStock}</div>
+								<div className="fields">Ideal: {item.idealStock}</div>
 							</div>
 						</Link>
 						<div onClick={()=>subtractStockClick(item.id, item.amountInStock, item.idealStock, item.alertAt, item.itemName, item.room)} className="circle-state" id="minus">-</div>
