@@ -27,9 +27,9 @@ function App() {
       <AppBar />
       <Router>
         <nav>
-          <Link to="/"><Button className="nav-button" variant="dark">Show Inventory</Button></Link>
-          <Link to="/add"><Button className="nav-button" variant="dark">Add Inventory Item</Button></Link>
-          <Link to="/shoppinglist"><Button className="nav-button" variant="dark">Shopping List</Button></Link>
+          <Link to="/"><button className="nav-button">Show Inventory</button></Link>
+          <Link to="/add"><button className="nav-button"><span id="plus-nav">+</span>Add Inventory Item</button></Link>
+          <Link to="/shoppinglist"><button className="nav-button">Shopping List</button></Link>
         </nav>
         <div className="container">
           

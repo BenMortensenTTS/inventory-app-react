@@ -1,6 +1,14 @@
 .nav-button {
-	opacity: .7;
+	opacity: 1;
 	margin: 10px 20px 0px 10px;
+    background-color: #8A8A8A;
+    padding: 7px 10px 7px 10px;
+    color: white;
+    user-select: none;
+}
+
+.nav-button:hover {
+    background-color: #7E7E7E;
 }
 
 html, body {
@@ -17,4 +25,14 @@ html, body {
 
  nav {
     text-align: center;
+ }
+
+ .button-pic {
+    margin-right: 5px;
+ }
+
+ #plus-nav {
+    font-weight: 1000;
+    margin-right: 5px;
+    color: green;
  }

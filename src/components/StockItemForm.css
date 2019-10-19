@@ -1,6 +1,7 @@
 .form-header {
 	line-height: 30px;
 	font-weight: 200;
+	user-select: none;
 }
 
 .form-input {
