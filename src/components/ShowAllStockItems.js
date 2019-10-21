@@ -22,7 +22,7 @@ function ShowAllStockItems(props) {
 					<div className="item-box" key={item.id}>
 						<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
 							<div className={"items " + ((item.amountInStock<=item.alertAt)?"low":"")}>
-								<div className="fields">{item.itemName}</div>
+								<div className="fields" id="item-name">{item.itemName}</div>
 								<div className="fields">Stock: {item.amountInStock}</div>
 								<div className="fields">Ideal: {item.idealStock}</div>
 							</div>
@@ -40,7 +40,7 @@ function ShowAllStockItems(props) {
 					<div className="item-box" key={item.id}>
 						<Link style={{ textDecoration: 'none'}} className="container" to={"/stockitem/" + item.id} >
 							<div className={"items " + ((item.amountInStock<=item.alertAt)?"low":"")}>
-								<div className="fields">{item.itemName}</div>
+								<div className="fields" id="item-name">{item.itemName}</div>
 								<div className="fields">Stock: {item.amountInStock}</div>
 								<div className="fields">Ideal: {item.idealStock}</div>
 							</div>
