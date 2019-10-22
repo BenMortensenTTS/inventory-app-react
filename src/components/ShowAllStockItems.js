@@ -11,9 +11,6 @@ function ShowAllStockItems(props) {
 
 		setItemStockArr([]);
 
-		console.log(props.stock);
-
-
 		if(props.match.url !== "/") {
 			setItemStockArr(props.stock.filter((item)=> {
 				return item.amountInStock <= item.alertAt;
