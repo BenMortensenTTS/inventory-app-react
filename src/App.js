@@ -11,7 +11,7 @@ function App() {
   const [inventoryData, setInventoryData] = useState([]);
 
   const getDataFromAPI = () => {
-    fetch("https://inventoryapp.cfapps.io/stockitems")
+    fetch("http://localhost:8080/stockitems")
     .then((res)=> res.json())
     .then((response) => {
       setInventoryData(response);
