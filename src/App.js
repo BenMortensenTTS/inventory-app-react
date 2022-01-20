@@ -11,7 +11,7 @@ function App() {
   const [inventoryData, setInventoryData] = useState([]);
 
   const getDataFromAPI = () => {
-    fetch("https://inventory-manager-project.herokuapp.com/stockitems")
+    fetch("https://inventorycontroller.herokuapp.com/stockitems")
     .then((res)=> res.json())
     .then((response) => {
       setInventoryData(response);

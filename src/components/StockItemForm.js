@@ -56,7 +56,7 @@ function StockItemForm(props) {
 	}
 
 	const handleUpdateClick = () => {
-		fetch('https://inventory-manager-project.herokuapp.com/stockitem/' + id, {
+		fetch('https://inventorycontroller.herokuapp.com/stockitem/' + id, {
 	    	method: 'put',
 	    	headers: {
 	        	"Content-Type": "application/json"
@@ -75,7 +75,7 @@ function StockItemForm(props) {
 	}
 
 	const handleCreateClick = () => {
-		fetch('https://inventory-manager-project.herokuapp.com/stockitem', {
+		fetch('https://inventorycontroller.herokuapp.com/stockitem', {
 	    	method: 'post',
 	    	headers: {
 	        	"Content-Type": "application/json"
