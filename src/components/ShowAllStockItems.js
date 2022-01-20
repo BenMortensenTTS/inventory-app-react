@@ -54,7 +54,7 @@ function ShowAllStockItems(props) {
 
 	const subtractStockClick = (id, amountInStock, idealStock, alertAt, itemName, room) => {
 		if(amountInStock > 0) {
-			fetch('http://localhost:8080/stockitem/' + id, {
+			fetch('https://inventory-manager-project.herokuapp.com/stockitem/' + id, {
 		    	method: 'put',
 		    	headers: {
 		        	"Content-Type": "application/json"
@@ -73,7 +73,7 @@ function ShowAllStockItems(props) {
 	}
 
 	const addStockClick = (id, amountInStock, idealStock, alertAt, itemName, room) => {
-		fetch('http://localhost:8080/stockitem/' + id, {
+		fetch('https://inventory-manager-project.herokuapp.com/stockitem/' + id, {
 	    	method: 'put',
 	    	headers: {
 	        	"Content-Type": "application/json"
